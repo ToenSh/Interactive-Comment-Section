@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Modal() {
+export default function Modal(props) {
   return (
     <>
       <div className=" flex max-w-sm flex-col gap-3 rounded-lg bg-white px-5 py-6">
@@ -10,10 +10,16 @@ export default function Modal() {
           comment and can't be undone
         </p>
         <div className="flex justify-between">
-          <button className=" rounded-md bg-grayish-blue py-2 px-6 uppercase text-white">
+          <button
+            className=" rounded-md bg-grayish-blue py-2 px-6 uppercase text-white"
+            onClick={() => props.handleIsDeleting()}
+          >
             No, Cancel
           </button>
-          <button className="rounded-md bg-soft-red py-2 px-6 uppercase text-white">
+          <button
+            className="rounded-md bg-soft-red py-2 px-6 uppercase text-white"
+            onClick={() => props.deleteComment()}
+          >
             Yes, Delete
           </button>
         </div>
